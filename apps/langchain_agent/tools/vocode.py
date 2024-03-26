@@ -14,10 +14,13 @@ from vocode.streaming.telephony.config_manager.redis_config_manager import (
     RedisConfigManager,
 )
 from vocode.streaming.models.agent import ChatGPTAgentConfig
+from vocode.streaming.models.synthesizer import ElevenLabsSynthesizerConfig
 import time
 
 LOOP = asyncio.new_event_loop()
 asyncio.set_event_loop(LOOP)
+
+# ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY')
 
 @tool("call phone number")
 def call_phone_number(input: str) -> str:
@@ -39,6 +42,10 @@ def call_phone_number(input: str) -> str:
         agent_config=ChatGPTAgentConfig(
             prompt_preamble=prompt,
             initial_message=BaseMessage(text=initial_message),
+        ),
+        synthesizer_config=ElevenLabsSynthesizerConfig.from_telephone_output_device(
+          voice_id="KHx6YfZBu23HH6GJtSrW",
+        #   api_key=ELEVENLABS_API_KEY  
         ),
         logger=logging.Logger("call_phone_number"),
     )

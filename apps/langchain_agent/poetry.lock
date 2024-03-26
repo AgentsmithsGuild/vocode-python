@@ -888,6 +888,25 @@ files = [
 ]
 
 [[package]]
+name = "elevenlabs"
+version = "1.0.0b1"
+description = ""
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "elevenlabs-1.0.0b1-py3-none-any.whl", hash = "sha256:08c974c59bda39585b100adf41242ddaffb3d2d2f17641cf8f3f3390c41f5aad"},
+    {file = "elevenlabs-1.0.0b1.tar.gz", hash = "sha256:4b63a507bbff375f2d0ec0e26e0ea67e860ceba92e866877fe8ff4781dc698b6"},
+]
+
+[package.dependencies]
+httpx = ">=0.21.2"
+ipython = ">=7.0"
+pydantic = ">=1.9.2"
+requests = ">=2.20"
+typing_extensions = ">=4.0.0"
+websockets = ">=11.0"
+
+[[package]]
 name = "executing"
 version = "2.0.1"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -4767,4 +4786,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11.8,<3.12"
-content-hash = "3682c5eafbaf52894bc9c4f6e7ce49f5145b559944acd6465783ff140bcd8aee"
+content-hash = "a5011cf80a56dd8ba81e6cc4eea56ad4512c879ea1e0169c05d26b71fb9abd8f"
